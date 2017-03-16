@@ -13,6 +13,7 @@ URL: http://www.rasterbar.com/products/luabind.html
 License: MIT
 Group: System/Libraries
 BuildRequires: boost-build >= 1.63.0-2
+BuildRequires: boost-devel
 BuildRequires: pkgconfig(luajit)
 Patch0: luabind-0.9.1-luajit.patch
 # Stolen from Fedora
