@@ -1,0 +1,18 @@
+--- luabind-0.9.1/luabind/detail/format_signature.hpp.omv~	2017-03-16 19:23:07.511278513 +0100
++++ luabind-0.9.1/luabind/detail/format_signature.hpp	2017-03-16 19:25:34.567439932 +0100
+@@ -13,15 +13,6 @@
+ # include <boost/mpl/next.hpp>
+ # include <boost/mpl/size.hpp>
+ 
+-namespace luabind {
+-
+-class object;
+-class argument;
+-template <class Base>
+-struct table;
+-
+-} // namespace luabind
+-
+ namespace luabind { namespace detail {
+ 
+ LUABIND_API std::string get_class_name(lua_State* L, type_id const& i);

@@ -6,7 +6,7 @@
 
 Name: luabind
 Version: 0.9.1
-Release: 1
+Release: 2
 Source0: https://downloads.sourceforge.net/project/luabind/luabind/%{version}/luabind-%{version}.tar.gz
 Summary: Library that helps create bindings between C++ and Lua
 URL: http://www.rasterbar.com/products/luabind.html
@@ -16,6 +16,7 @@ BuildRequires: boost-build >= 1.63.0-2
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(luajit)
 Patch0: luabind-0.9.1-luajit.patch
+Patch1: luabind-0.9.1-clang-4.0.patch
 # Stolen from Fedora
 Patch100: https://src.fedoraproject.org/cgit/rpms/luabind.git/plain/luabind-0.9.1-boost149fix.patch
 Patch101: https://src.fedoraproject.org/cgit/rpms/luabind.git/plain/001-luabind-use-lua_compare.patch
@@ -80,10 +81,10 @@ sed -i -e "s,/lib ,/%{_lib} ,g" Jamroot
 %endif
 
 %build
-bjam %{?_smp_mflags} -d+2 "cxxflags=%{optflags}" release
+bjam %{?_smp_mflags} -d+2 cxxflags="%{optflags}" linkflags="%{optflags}" release toolset=clang
 
 %install
-bjam %{?_smp_mflags} -d+2 --prefix=%{buildroot}%{_prefix} --libdir=%{buildroot}%{_libdir} "cxxflags=%{optflags}" release install
+bjam %{?_smp_mflags} -d+2 --prefix=%{buildroot}%{_prefix} --libdir=%{buildroot}%{_libdir} "cxxflags=%{optflags}" toolset=clang release install
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
