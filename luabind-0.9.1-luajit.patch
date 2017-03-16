@@ -1,0 +1,24 @@
+--- luabind-0.9.1/Jamroot.omv~	2017-03-16 18:31:24.953657910 +0100
++++ luabind-0.9.1/Jamroot	2017-03-16 18:32:15.306464001 +0100
+@@ -64,7 +64,7 @@ else if [ os.name ] in LINUX MACOSX FREE
+         $(LUA_PATH) $(HOME)/Library/Frameworks /Library/Frameworks /usr /usr/local /opt/local /opt ;
+ 
+     local possible-suffixes =
+-        include/lua5.1 include/lua51 include/lua include ;
++        include/luajit-2.1 include/luajit21 include/luajit include ;
+ 
+     local includes = [ GLOB $(possible-prefixes)/$(possible-suffixes) : lua.h ] ;
+ 
+@@ -83,10 +83,10 @@ else if [ os.name ] in LINUX MACOSX FREE
+ 
+     local lib = $(prefix)/lib ;
+ 
+-    local names = liblua5.1 liblua51 liblua ;
++    local names = libluajit-5.1 libluajit51 libluajit ;
+     local extensions = .a .so ;
+ 
+-    library = [ GLOB $(lib)/lua51 $(lib)/lua5.1 $(lib)/lua $(lib) :
++    library = [ GLOB $(lib)/luajit21 $(lib)/luajit-2.1 $(lib)/luajit $(lib) :
+         $(names)$(extensions) ] ;
+     lib-name = [ MATCH "lib(.*)" : $(library[1]:B) ] ;
+ 

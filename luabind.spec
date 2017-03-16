@@ -13,7 +13,8 @@ URL: http://www.rasterbar.com/products/luabind.html
 License: MIT
 Group: System/Libraries
 BuildRequires: boost-build >= 1.63.0-2
-BuildRequires: pkgconfig(lua) >= 5.3
+BuildRequires: pkgconfig(luajit)
+Patch0: luabind-0.9.1-luajit.patch
 # Stolen from Fedora
 Patch100: https://src.fedoraproject.org/cgit/rpms/luabind.git/plain/luabind-0.9.1-boost149fix.patch
 Patch101: https://src.fedoraproject.org/cgit/rpms/luabind.git/plain/001-luabind-use-lua_compare.patch
