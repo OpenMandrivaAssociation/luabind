@@ -75,7 +75,7 @@ virtual functions from their C++ baseclasses.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 %if "%{_lib}" != "lib"
 sed -i -e "s,/lib ,/%{_lib} ,g" Jamroot
 %endif
