@@ -1,4 +1,3 @@
-%global debug_package %{nil}
 
 %define major 0.9.0
 %define libname %mklibname luabind %{major}
