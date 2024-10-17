@@ -8,7 +8,7 @@ Version: 0.9.1
 Release: 4
 Source0: https://downloads.sourceforge.net/project/luabind/luabind/%{version}/luabind-%{version}.tar.gz
 Summary: Library that helps create bindings between C++ and Lua
-URL: http://www.rasterbar.com/products/luabind.html
+URL: https://www.rasterbar.com/products/luabind.html
 License: MIT
 Group: System/Libraries
 BuildRequires: boost-build >= 1.63.0-2
